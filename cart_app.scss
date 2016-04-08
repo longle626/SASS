@@ -1,0 +1,448 @@
+//colors
+$color_shark_approx: #272727;
+$white: #fff;
+$color_storm_dust_approx: #636363;
+$color_celeste_approx: #ccc;
+$color_chicago_approx: #5c5c5c;
+$color_black_approx: #030303;
+$color_mercury_approx: #e7e7e7;
+$color_mountain_mist_approx: #999;
+$color_alto_approx: #ddd;
+$color_apricot_white_approx: #feffec;
+$black: #000;
+$color_geraldine_approx: #f88;
+$color_madang_approx: #bfb;
+$color_fern_approx: #5cb85c;
+$color_apple_approx: #4cae4c;
+
+//fonts
+$font_0: Arial Rounded MT;
+$font_1: sans-serif;
+
+//urls
+$url_0: url(../admin_img/backdrop.png);
+
+//@extend-elements
+//html, body
+%extend_1 {
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+}
+
+//#configure, header label
+%extend_2 {
+	border-style: solid;
+	border-color: $color_storm_dust_approx;
+	border-width: 0 0 0 1px;
+	margin-bottom: 0;
+	font-weight: normal;
+}
+
+
+//header .k-dropdown, header #font-size-value
+%extend_3 {
+	font-size: 18px;
+	line-height: 45px;
+	margin-bottom: 9px;
+}
+
+
+//header .k-dropdown, header .k-dropdown-wrap.k-state-default
+%extend_4 {
+	background-color: transparent;
+	border-color: $color_chicago_approx;
+	border-radius: 0;
+}
+
+
+//.uploaded, #buttontable .uploaded
+%extend_5 {
+	padding: 0;
+	height: 14px;
+	border-radius: 10px;
+	border-image: initial;
+}
+
+
+//.dropbox, #buttontable .dropbox
+%extend_6 {
+	width: 8em;
+	height: 1.4em;
+	border: 2px solid $color_alto_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 8px;
+	background-color: $color_apricot_white_approx;
+	background-image: $url_0;
+	text-align: center;
+	color: $white;
+	font-size: 1.4em;
+	font-family: $font_0, $font_1;
+	font-weight: 400;
+	//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	text-shadow: 1px 1px 0 $black, 2px 2px 0 $black !important;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+
+
+//.btn, #buttontable .btn
+%extend_7 {
+	display: inline-block;
+	padding: 0 12px;
+	margin-bottom: 0;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	
+	border-radius: 4px;
+}
+
+
+//.btn-success, #buttontable .btn-success
+%extend_8 {
+	color: $white;
+	background-color: $color_fern_approx;
+	border-color: $color_apple_approx;
+}
+
+
+html {
+	@extend %extend_1;
+}
+body {
+	@extend %extend_1;
+}
+#example {
+	padding-top: 2em;
+}
+header {
+	margin: 0;
+	font-size: 20px;
+	color: $white;
+	background-color: $color_shark_approx;
+	h1 {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	button {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.container {
+		position: relative;
+		h1 {
+			margin: 0;
+			font-size: 21px;
+			line-height: 65px;
+			padding-top: 20px;
+			padding-left: 0;
+			&.visible-sm {
+				padding-top: 10px;
+				line-height: 33px;
+				padding-bottom: 10px;
+			}
+		}
+	}
+	label {
+		@extend %extend_2;
+	}
+	.description {
+		text-transform: uppercase;
+		color: $color_celeste_approx;
+		font-size: 10px;
+		line-height: 29px;
+	}
+	.k-dropdown {
+		@extend %extend_3;
+		width: 100%;
+		@extend %extend_4;
+		.k-input {
+			padding-top: 0;
+			padding-bottom: 0;
+			height: auto;
+			text-indent: 14px;
+		}
+	}
+	#font-size-value {
+		@extend %extend_3;
+	}
+	.k-dropdown-wrap {
+		background-image: none !important;
+		&.k-state-default {
+			@extend %extend_4;
+		}
+		&.k-state-hover {
+			background-color: $color_black_approx;
+		}
+		&.k-state-active {
+			background-color: $color_black_approx;
+		}
+		&.k-state-focused {
+			background-color: $color_black_approx;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: none;
+		}
+	}
+}
+#configure {
+	@extend %extend_2;
+	z-index: 10;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	border-width: 0 0 0 1px;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: $white;
+}
+#demo {
+	padding-top: 46px;
+}
+#menu {
+	margin-bottom: 30px;
+}
+#profile {
+	position: relative;
+}
+.ra-well-title {
+	font-size: 1.2857em;
+	line-height: 1.2857em;
+	border-bottom: 1px solid $color_mercury_approx;
+	margin: -5px -19px 0.8333em;
+	padding: 0 19px 0.7222em;
+}
+.ra-avatar {
+	border: 1px solid $color_mercury_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 2px;
+}
+.ra-first-name {
+	display: block;
+	margin-top: 0.8571em;
+}
+.ra-last-name {
+	display: block;
+	font-size: 1.7143em;
+	line-height: 1.3em;
+}
+.ra-position {
+	font-size: 0.8571em;
+	color: $color_mountain_mist_approx;
+	padding-bottom: 2em;
+}
+.form-group {
+	.k-widget {
+		width: 100%;
+	}
+	.k-textbox {
+		width: 100%;
+	}
+}
+.buttons-wrap {
+	border-top: 1px solid $color_mercury_approx;
+	padding-top: .5em;
+	text-align: right;
+}
+.ra-section {
+	margin-bottom: 20px;
+}
+.ra-well-overlay {
+	margin: -16px -20px -19px;
+}
+#tabstrip {
+	.k-content {
+		min-height: 156px;
+		padding: 1px;
+	}
+	.k-chart {
+		height: 156px;
+	}
+	.k-tabstrip-items {
+		span {
+			float: left;
+			line-height: 1.3em;
+			vertical-align: middle;
+		}
+		.hidden-xs {
+			margin-left: 4px;
+		}
+	}
+}
+#tabstrip-4 {
+	text-align: center;
+}
+.market-donut {
+	display: inline-block;
+	width: 170px;
+}
+#panelbar {
+	.k-content {
+		padding: 1em;
+	}
+	ul {
+		margin-bottom: 10px;
+	}
+}
+#listview {
+	list-style-type: none;
+	padding: 0 0 15px;
+	figure {
+		border: 1px solid $color_mercury_approx;
+		border-radius: 3px;
+		padding: 5px;
+		margin-top: 15px;
+	}
+}
+figure {
+	h4 {
+		font-size: 1.15em;
+	}
+	p.hidden-sm {
+		min-height: 80px;
+	}
+}
+footer {
+	text-align: right;
+	font-size: 0.8571em;
+	padding: 2em 0;
+}
+@media(max-width: 767px) {
+	header {
+		.container {
+			padding-right: 0;
+			h1 {
+				padding-top: 0;
+				line-height: 50px;
+			}
+		}
+		label {
+			border-width: 1px 0 0 0;
+			display: block;
+		}
+	}
+	#configurator-wrap {
+		position: absolute;
+		overflow: hidden;
+		height: 260px;
+		right: 0;
+		top: 50px;
+		z-index: 1000;
+		padding: 0;
+		width: 320px;
+	}
+	#configurator {
+		background-color: $color_shark_approx;
+		position: absolute;
+		width: 100%;
+		margin: 0;
+	}
+	.k-menu.k-menu-horizontal .k-item {
+		float: none;
+	}
+}
+table {
+	border-collapse: collapse;
+}
+.percent {
+	position: absolute;
+	width: 150px;
+	height: 14px;
+	z-index: 1;
+	text-align: center;
+	font-size: 0.8em;
+	color: $white;
+}
+.progress-bar {
+	width: 150px;
+	height: 14px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 10px;
+	border: 1px solid $color_celeste_approx;
+	//Instead of the line below you could use @include border-image($value)
+	border-image: initial;
+}
+.uploaded {
+	@extend %extend_5;
+}
+#buttontable {
+	.uploaded {
+		@extend %extend_5;
+	}
+	.dropbox {
+		@extend %extend_6;
+		span {
+			margin-top: -2px !important;
+			display: block;
+		}
+		&.not-available {
+			background-color: $color_geraldine_approx;
+		}
+		&.over {
+			background-color: $color_madang_approx;
+		}
+	}
+	.btn {
+		@extend %extend_7;
+	}
+	.btn-success {
+		@extend %extend_8;
+	}
+}
+.dropbox {
+	@extend %extend_6;
+	span {
+		margin-top: -2px !important;
+		display: block;
+	}
+	&.not-available {
+		background-color: $color_geraldine_approx;
+	}
+	&.over {
+		background-color: $color_madang_approx;
+	}
+}
+.btn {
+	@extend %extend_7;
+}
+.btn-success {
+	@extend %extend_8;
+}
+.fileinput-button {
+	position: relative;
+	overflow: hidden;
+	input {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		opacity: 0;
+		font-size: 2px;
+		direction: ltr;
+		cursor: pointer;
+	}
+}
+#fileToUpload {
+	width: 60px !important;
+}
+.revenue:after {
+	content: "\E08C";
+}
+.spd:after {
+	content: "\E04B";
+}
+.spr:after {
+	content: "\E050";
+}
+.share:after {
+	content: "\E04E";
+}
